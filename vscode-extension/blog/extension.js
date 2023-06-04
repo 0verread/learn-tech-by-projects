@@ -19,11 +19,9 @@ function activate(context) {
 	let disposable = vscode.commands.registerCommand('blog.helloWorld', function () {
 
 		// Display a message box to the user
-		// vscode.window.showInformationMessage('Hello World from blog!');
 		const userInput = getUserInput()
 		userInput.then((data)=>{
-			console.log(data)
-			vscode.window.showInformationMessage(`User typed ${data}`);
+			vscode.window.showInformationMessage(`User typed: ${data}`);
 		})
 	});
 
