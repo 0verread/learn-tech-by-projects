@@ -23,6 +23,10 @@ function activate(context) {
 		userInput.then((data)=>{
 			vscode.window.showInformationMessage(`User typed: ${data}`);
 		})
+
+		const editor = vscode.window.activeTextEditor;
+		const selectedText = editor.document.getText(editor.selection);
+		vscode.window.showInformationMessage(`You have selected ${selectedText}`)
 	});
 
 	context.subscriptions.push(disposable);
@@ -35,3 +39,5 @@ module.exports = {
 	activate,
 	deactivate
 }
+
+
